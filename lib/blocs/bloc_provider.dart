@@ -37,6 +37,7 @@ class BlocProvider<T extends BlocBase> extends StatefulWidget {
 class _BlocProviderState<T> extends State<BlocProvider<BlocBase>> {
   @override
   void dispose() {
+    //组件dispose的时候调用bloc的dispose方法
     if (widget.userDispose) widget.bloc.dispose();
     super.dispose();
   }
