@@ -17,9 +17,11 @@ class HomePage extends StatelessWidget {
       aspectRatio: 16.0 / 9.0,
       child: Swiper(
         indicatorAlignment: AlignmentDirectional.topEnd,
+//        indicatorAlignment: AlignmentDirectional.bottomCenter,
         circular: true,
         interval: const Duration(seconds: 5),
         indicator: NumberSwiperIndicator(),
+//        indicator: CircleSwiperIndicator(),
         children: list.map((model) {
           return new InkWell(
             onTap: () {
@@ -39,6 +41,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
+//  推荐项目
   Widget buildRepos(BuildContext context, List<ReposModel> list) {
     if (ObjectUtil.isEmpty(list)) {
       return new Container(height: 0.0);
@@ -66,6 +69,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
+//  推荐公告号
   Widget buildWxArticle(BuildContext context, List<ReposModel> list) {
     if (ObjectUtil.isEmpty(list)) {
       return new Container(height: 0.0);
@@ -114,6 +118,7 @@ class HomePage extends StatelessWidget {
       });
     }
 
+    //作为banner 为啥要写在最外层
     return new StreamBuilder(
         stream: bloc.bannerStream,
         builder:
@@ -128,6 +133,7 @@ class HomePage extends StatelessWidget {
             },
             child: new ListView(
               children: <Widget>[
+//                升级
                 new StreamBuilder(
                     stream: bloc.recItemStream,
                     builder: (BuildContext context,
@@ -155,6 +161,7 @@ class HomePage extends StatelessWidget {
                         },
                       );
                     }),
+//                外层snapshot
                 buildBanner(context, snapshot.data),
                 new StreamBuilder(
                     stream: bloc.recReposStream,
