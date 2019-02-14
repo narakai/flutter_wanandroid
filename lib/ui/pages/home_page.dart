@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
       });
     }
 
-    //作为banner 为啥要写在最外层
+    //通过snapshot看banner有无数据，banner无数据则显示loading
     return new StreamBuilder(
         stream: bloc.bannerStream,
         builder:
