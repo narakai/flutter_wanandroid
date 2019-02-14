@@ -22,6 +22,7 @@ class MainPage extends StatelessWidget {
     LogUtil.e("MainPagess build......");
     return new DefaultTabController(
         length: _allPages.length,
+//      Scaffold上面再套一层DefaultTabController就可以了
         child: new Scaffold(
           appBar: new MyAppBar(
             leading: new Container(

@@ -7,6 +7,7 @@ import 'package:flutter_wanandroid/ui/pages/main_page.dart';
 import 'package:flutter_wanandroid/ui/pages/page_index.dart';
 
 Future<void> main() async {
+  //入口
   return runApp(BlocProvider<ApplicationBloc>(
     bloc: ApplicationBloc(),
     child: BlocProvider(child: MyApp(), bloc: MainBloc()),
@@ -14,6 +15,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatefulWidget {
+//  StatefulWidget需要createState
   @override
   State<StatefulWidget> createState() {
     return MyAppState();

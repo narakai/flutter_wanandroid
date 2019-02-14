@@ -106,9 +106,10 @@ class _MainLeftPageState extends State<MainLeftPage> {
               ),
             ),
           ),
+//          Expanded是默认要占满分配的空间的，而Flexible则默认不需要
           new Expanded(
             child: new ListView.builder(
-                padding: const EdgeInsets.all(0.0),
+                padding: const EdgeInsets.all(10.0),
                 itemCount: _pageInfo.length,
                 itemBuilder: (BuildContext context, int index) {
                   PageInfo pageInfo = _pageInfo[index];
@@ -116,6 +117,7 @@ class _MainLeftPageState extends State<MainLeftPage> {
                     leading: new Icon(pageInfo.iconData),
                     title:
                         new Text(IntlUtil.getString(context, pageInfo.titleId)),
+//                    trailing: new Text('Tail'),
                     onTap: () {
                       if (pageInfo.titleId != Ids.titleSignOut) {
                         NavigatorUtil.pushPage(context, pageInfo.page,
