@@ -18,6 +18,7 @@ class ComListBloc implements BlocBase {
 
   Sink<StatusEvent> get _comListEventSink => _comListEvent.sink;
 
+//  asBroadcastStream 将其转化为多订阅流
   Stream<StatusEvent> get comListEventStream =>
       _comListEvent.stream.asBroadcastStream();
 

@@ -73,6 +73,7 @@ class SplashPageState extends State<SplashPage> {
   void _initBannerData() {
     for (int i = 0, length = _guideList.length; i < length; i++) {
       if (i == length - 1) {
+//        Flutter Stack 帧布局,层叠堆放
         _bannerList.add(new Stack(
           children: <Widget>[
             new Image.asset(
@@ -191,6 +192,8 @@ class SplashPageState extends State<SplashPage> {
     return new Material(
       child: new Stack(
         children: <Widget>[
+//          Offstage并不是通过插入或者删除自己在widget tree中的节点，来达到显示以及隐藏的效果，
+//        而是通过设置自身尺寸、不响应hitTest以及不绘制，来达到展示与隐藏的效果。
           new Offstage(
             offstage: !(_status == 0),
             child: _buildSplashBg(),
