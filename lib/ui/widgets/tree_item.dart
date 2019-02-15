@@ -8,6 +8,7 @@ class TreeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //所有标签集合
     final List<Widget> chips = model.children.map<Widget>((TreeModel _model) {
       return Chip(
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -20,6 +21,7 @@ class TreeItem extends StatelessWidget {
       );
     }).toList();
 
+    //加入inkwell
     return new InkWell(
       onTap: () {
         //LogUtil.e("ReposModel: " + model.toString());
